@@ -18,84 +18,69 @@
 
         <h2 class="text-center name">Hemayetpur Counter</h2>
 
-        <div class="text-center checkDate">
-            <input id="calendar" type="date" data-date-inline-picker="true" />
-            <button onclick="getDate()">Set Date</button>
-        </div>
+    </div>
 
-        <strong>
-            <p id="date" class="text-center"></p>
-        </strong>
+    <div class="container input-form">
+
+
+        <form class="form-inline" action="insert.php" method="POST">
+
+            <input id="calendar" name="date" type="date" data-date-inline-picker="true" />
+
+            <ul class="list-group list-group-horizontal submit">
+                <li class="list-group-item">
+                    <select name="bus_name" id="busValue" class="cars form-control" required>
+                        <option value="" selected>বাসের নাম</option>
+                        <option value="SB Super Deluxe">SB Super Deluxe</option>
+                        <option value="Comfort Line">Comfort Line</option>
+                        <option value="Golden Line">Golden Line</option>
+                        <option value="Eagle Paribahan">Eagle Paribahan</option>
+                        <option value="Falguni Paribahan">Falguni Paribahan</option>
+                        <option value="Islam Paribahan">Islam Paribahan</option>
+                        <option value="Jamuna Line">Jamuna Line</option>
+                        <option value="Darsana Deluxe Paribahan">Darsana Deluxe Paribahan</option>
+                        <option value="Darsana Deluxe">Darsana Deluxe</option>
+                    </select>
+                </li>
+
+                <li class="list-group-item">
+                    <input type="time" name="time" id="time" class="form-control">
+                </li>
+
+                <li class="list-group-item">
+                    <select name="passenger_count" id="passValue" class="cars form-control" required>
+                        <option value="" selected>যাত্রী সংখ্যা</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </li>
+
+                <li class="list-group-item">
+                    <input type="number" name="commision" id="commision" class="form-control" placeholder="Commision"
+                        required>
+
+                </li>
+
+
+            </ul>
+
+            <input class="submit" type="submit">
+
+        </form>
+
 
     </div>
 
-    <div class="container">
-
-        <ul class="list-group list-group-horizontal">
-            <li class="list-group-item">
-                <select id="busValue" class="cars form-control">
-                    <option value="" selected>বাসের নাম</option>
-                    <option value="SB Super Deluxe">SB Super Deluxe</option>
-                    <option value="Comfort Line">Comfort Line</option>
-                    <option value="Golden Line">Golden Line</option>
-                    <option value="Eagle Paribahan">Eagle Paribahan</option>
-                    <option value="Falguni Paribahan">Falguni Paribahan</option>
-                    <option value="Islam Paribahan">Islam Paribahan</option>
-                    <option value="Jamuna Line">Jamuna Line</option>
-                    <option value="Darsana Deluxe Paribahan">Darsana Deluxe Paribahan</option>
-                    <option value="Darsana Deluxe">Darsana Deluxe</option>
-                </select>
-            </li>
-
-            <li class="list-group-item">
-                <select id="passValue" class="cars form-control">
-                    <option value="" selected>যাত্রী সংখ্যা</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                </select>
-            </li>
-
-            <li class="list-group-item">A third item</li>
-        </ul>
-
-        <button onclick="getBusName()">Set Date</button>
-        <p id="busName" class="text-center"></p>
-
-    </div>
 
 
-
-
-
-
-
-
-    <script>
-
-        function getBusName() {
-
-            var x = document.getElementById("busValue").value;
-            var y = document.getElementById('passValue').value;
-            document.getElementById('busName').innerText = x + ' ' + y;
-        };
-
-
-        function getDate() {
-
-            var date = document.getElementById("calendar").value;
-            document.getElementById('date').innerText = date;
-        };
-
-
-    </script>
 
 
 
