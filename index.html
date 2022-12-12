@@ -16,18 +16,42 @@
 
     <div class="container">
 
-        <h2 class="text-center name">Hemayetpur Counter</h2>
+        <h1 class="text-center name">Hemayetpur Counter</h1>
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+
+            <a href="data_read/data_income.php">
+                <button class="btn btn-info" type="button">Income List</button>
+            </a>
+
+            <a href="data_read/data_costs.php">
+                <button class="btn btn-warning" type="button">Khoroch</button>
+            </a>
+
+        </div>
 
     </div>
 
+    <!-- Income Form Start Here -->
+
     <div class="container input-form">
 
+        <strong>
+            <p class="text-center title">আয়ের হিসাব</p>
+        </strong>
 
-        <form class="form-inline" action="insert.php" method="POST">
-
-            <input id="calendar" name="date" type="date" data-date-inline-picker="true" />
+        <form class="form-inline" action="data_insert/insert_income.php" method="POST">
 
             <ul class="list-group list-group-horizontal submit">
+
+                <li class="list-group-item">
+                    <input id="calendar" name="date" type="date" data-date-inline-picker="true" class="form-control" />
+                </li>
+
+                <li class="list-group-item">
+                    <input type="time" name="time" id="time" class="form-control">
+                </li>
+
                 <li class="list-group-item">
                     <select name="bus_name" id="busValue" class="cars form-control" required>
                         <option value="" selected>বাসের নাম</option>
@@ -40,11 +64,8 @@
                         <option value="Jamuna Line">Jamuna Line</option>
                         <option value="Darsana Deluxe Paribahan">Darsana Deluxe Paribahan</option>
                         <option value="Darsana Deluxe">Darsana Deluxe</option>
+                        <option value="Others">Others</option>
                     </select>
-                </li>
-
-                <li class="list-group-item">
-                    <input type="time" name="time" id="time" class="form-control">
                 </li>
 
                 <li class="list-group-item">
@@ -60,6 +81,7 @@
                         <option value="8">8</option>
                         <option value="9">9</option>
                         <option value="10">10</option>
+                        <option value="00">Others</option>
                     </select>
                 </li>
 
@@ -69,13 +91,63 @@
 
                 </li>
 
-
             </ul>
 
-            <input class="submit" type="submit">
+            <input class="submit btn btn-success" type="submit" value="Save">
 
         </form>
 
+    </div>
+
+    <!-- Income Form End Here -->
+
+
+
+
+    <div class="container input-form-cost">
+
+        <strong>
+            <p class="text-center title">ব্যায়ের হিসাব</p>
+        </strong>
+
+
+        <form class="form-inline" action="data_insert/insert_costs.php" method="POST">
+
+            <ul class="list-group list-group-horizontal submit">
+
+                <li class="list-group-item">
+                    <input id="calendar" name="cost_date" type="date" data-date-inline-picker="true"
+                        class="form-control" />
+                </li>
+
+                <li class="list-group-item">
+                    <input type="time" name="cost_time" id="time" class="form-control">
+                </li>
+
+                <li class="list-group-item">
+                    <select name="cost_name" id="busValue" class="cars form-control" required>
+                        <option value="" selected>ব্যায়ের ধরন</option>
+                        <option value="MD. Titu Mir">MD. Titu Mir</option>
+                        <option value="MD. Mafuz Alam">MD. Mafuz Alam</option>
+                        <option value="MD. Sadhin">MD. Sadhin</option>
+                        <option value="MD. Lablu">MD. Lablu</option>
+                        <option value="Current Bill">কারেন্ট বিল</option>
+                        <option value="Internet Bill">ইন্টারনেট বিল</option>
+                        <option value="Food Bill">নাস্তার বিল</option>
+                        <option value="Others">অন্যান্য</option>
+                    </select>
+                </li>
+
+                <li class="list-group-item">
+                    <input type="number" name="cost_amount" id="" class="form-control" placeholder="Commision" required>
+
+                </li>
+
+            </ul>
+
+            <input class="submit btn btn-success" type="submit" value="Save">
+
+        </form>
 
     </div>
 
