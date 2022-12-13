@@ -34,14 +34,14 @@
                 <?php
 
                 $hostname = 'localhost'; // specify host domain or IP, i.e. 'localhost' or '127.0.0.1' or server IP 'xxx.xxxx.xxx.xxx'
-                $database = 'friendsi_blood'; // specify database name
+                $database = 'friendsi_counter_db'; // specify database name
                 $db_user = 'friendsi_user_1'; // specify username
                 $db_pass = 'friendsi_user_1'; // specify password
                 
 
                 $con = mysqli_connect("$hostname", "$db_user", "$db_pass", "$database");
 
-                $sql = "SELECT * FROM counter_costs ORDER BY id DESC";
+                $sql = "SELECT * FROM counter_cost ORDER BY id DESC";
                 $result = mysqli_query($con, $sql);
 
                 while ($row = mysqli_fetch_assoc($result)) {
